@@ -31,8 +31,8 @@ module.exports = {
 				method: "GET", // method,
 				path: "/greet", // path
 			},
-			async handler() {
-				return "Hello Custom Moleculer Service Implementation";
+			async handler(ctx) {
+				return "Hello Custom Moleculer Service Implementation"+ctx.params.name;
 			},
 		},
 	},
@@ -40,6 +40,10 @@ module.exports = {
 	events: {}, // Service events object
 
 	// lifecycle methods of a service
+
+	methods:{
+
+	},
 
 	// create a service
 	created() {}, //function
